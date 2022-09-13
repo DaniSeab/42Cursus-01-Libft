@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 19:29:00 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/12 20:30:26 by dlima-se         ###   ########.fr       */
+/*   Created: 2022/09/12 22:15:38 by dlima-se          #+#    #+#             */
+/*   Updated: 2022/09/13 03:20:40 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int ch, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	while ((str) && (n > 0))
-	{
-		if ((*(unsigned char *)str) == (unsigned char)ch)
-			return ((void *)str);
-		n--;
-		str++;
-	}
-	return (0);
+	int	end;
+	int	i;
+	
+	end = ft_strlen(s1) - 1;
+	i = 0;
+	while (s1 && ft_strchr(set, s1[i]))
+		i++;
+	while (end && ft_strchr(set, s1[end]))
+		end--;
+	return (ft_substr(s1, 0, (size_t)(end - i + 2)));
 }
+	

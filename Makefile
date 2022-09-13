@@ -6,7 +6,7 @@
 #    By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/05 22:15:32 by dlima-se          #+#    #+#              #
-#    Updated: 2022/09/10 00:51:23 by dlima-se         ###   ########.fr        #
+#    Updated: 2022/09/13 03:45:37 by dlima-se         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,12 @@ SRCS		= ft_isalpha.c \
 			ft_strnstr.c \
 			ft_atoi.c \
 			ft_calloc.c \
-			ft_strdup.c
+			ft_strdup.c \
+			ft_substr.c \
+			ft_strjoin.c \
+			ft_strtrim.c \
+			ft_itoa.c \
+
 BONUS_SRCS	=
 INC			= -I libft.h
 OBJS		= ${SRCS:.c=.o}

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 19:29:00 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/12 20:30:26 by dlima-se         ###   ########.fr       */
+/*   Created: 2022/09/12 22:05:08 by dlima-se          #+#    #+#             */
+/*   Updated: 2022/09/12 22:47:21 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int ch, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	while ((str) && (n > 0))
-	{
-		if ((*(unsigned char *)str) == (unsigned char)ch)
-			return ((void *)str);
-		n--;
-		str++;
-	}
-	return (0);
+	char	*res;
+	int		i;
+
+	i = 0;
+	res = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
+	if (!res)
+		return (0);
+	while (*s1)
+		res[i++] = *s1++;
+	while (*s2)
+		res[i++] = *s2++;
+	return (res);
 }
