@@ -6,7 +6,7 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 21:41:27 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/13 03:20:52 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/14 02:45:45 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	res = calloc(len + 1, sizeof(char));
+	if (start >= ft_strlen(s))
+	{
+		res = ft_calloc(1, 1);
+		return (res);
+	}
+	if ((len + (size_t)start) > ft_strlen(s))
+		len = ft_strlen(s) - (size_t)start;
+	res = ft_calloc(len + 1, sizeof(char));
 	if (!res)
 		return (0);
 	while (i < len)

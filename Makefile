@@ -6,7 +6,7 @@
 #    By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/05 22:15:32 by dlima-se          #+#    #+#              #
-#    Updated: 2022/09/13 03:45:37 by dlima-se         ###   ########.fr        #
+#    Updated: 2022/09/14 19:05:05 by dlima-se         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,16 @@ SRCS		= ft_isalpha.c \
 			ft_calloc.c \
 			ft_strdup.c \
 			ft_substr.c \
+			ft_split.c \
 			ft_strjoin.c \
 			ft_strtrim.c \
 			ft_itoa.c \
-
+            ft_strmapi.c \
+            ft_striteri.c \
+            ft_putchar_fd.c \
+            ft_putstr_fd.c \
+            ft_putendl_fd.c \
+            ft_putnbr_fd.c
 BONUS_SRCS	=
 INC			= -I libft.h
 OBJS		= ${SRCS:.c=.o}
@@ -68,3 +74,7 @@ fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
+
+rebonus: fclean bonus
+
+.PHONY:	all clean fclean re bonus rebonus

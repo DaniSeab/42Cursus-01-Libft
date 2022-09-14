@@ -6,16 +6,15 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:30:27 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/12 22:03:50 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/14 19:05:43 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 /* Parte 1 */
 int				ft_isalpha(int ch);
@@ -43,7 +42,7 @@ void			*ft_calloc(size_t nitems, size_t size);
 char			*ft_strdup(char *src);
 /* Parte 2 */
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char 			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);

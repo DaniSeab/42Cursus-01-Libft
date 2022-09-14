@@ -6,7 +6,7 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:30:03 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/12 21:30:25 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/14 00:55:38 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*ft_strnstr(const char	*big, const char *little, size_t n)
 	i = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
+	if (n < 0)
+		return (0);
 	while (big[i] != '\0' && i < n)
 	{
 		if (big[i] == little[0])
