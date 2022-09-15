@@ -6,7 +6,7 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 03:27:23 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/14 02:55:54 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/15 03:27:19 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,27 @@ static int	ft_count_digits(int n)
 	return (count);
 }
 
+char	*min_max_num(int n)
+{
+	char	*res;
+	if (n == -2147483648)
+	{
+		res = ft_calloc(12, sizeof(char));
+		res = "-2147483648";
+		return (res);
+	}
+	res = ft_calloc(11, sizeof(char));
+	res = "-2147483647";		
+	return (res);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*res;
 	int		i;
 
+	if (n == -2147483648 || n == 2147483647)
+		return (min_max_num(n));
 	i = ft_count_digits(n);
 	res = ft_calloc(i, sizeof(char));
 	if (!res)
@@ -46,11 +62,31 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		*res = '0';
 	i -= 2;
-	while (n != 0)
+	while (n != 0) 577
 	{
-		res[i] = (n % 10) + 48;
-		i--;
-		n /= 10;
+		if (n < 10)
+		{
+			res[i] = (n % 10) + 48; 
+			i--;
+		}
+		n /= 10; 57
 	}
 	return (res);
+}
+
+int		main(void)
+{
+	ft_putnbr_fd(42, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-57, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(164189, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-987441, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(2147483647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-2147483648LL, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
 }

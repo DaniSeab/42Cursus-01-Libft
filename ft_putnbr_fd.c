@@ -6,7 +6,7 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 03:05:34 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/14 03:12:35 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/15 00:39:05 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	if (n < 10)
-		ft_putchar_fd(n, fd);
+	if (n <= 9)
+		ft_putchar_fd(n + 48, fd);
 	else
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10, fd);		
+		ft_putchar_fd(n % 10, fd);
 	}
 }

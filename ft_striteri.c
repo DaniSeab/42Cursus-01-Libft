@@ -6,7 +6,7 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 03:14:20 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/14 17:12:33 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/15 01:50:46 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
-	while (s)
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;
