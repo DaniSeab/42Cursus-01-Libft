@@ -6,22 +6,36 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 03:22:52 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/16 01:50:26 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/17 22:54:18 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static char	**empty_fill(void)
+static char	**empty_fill(int sig, const char *s)
 {
 	char	**res;
 
-	res = malloc(sizeof(char **) * 1);
-	if (!res)
-		return (0);
-	res[0] = NULL;
+	if (sig == 1)
+	{
+		res = malloc(sizeof(char **) * 1);
+		if (!res)
+			return (0);
+		res[0] = NULL;
+	}
+	if (sig == 2)
+	{
+		res = malloc(sizeof(char **) * 2);
+		res[0] = ft_strdup((char *)s);
+		res[1] = NULL;
+	}
 	return (res);
+}
+
+static void	free_all(char **res, int j)
+{
+	while (j)
+		free(res[j--]);
 }
 
 static int	word_count(char const *s, char c)
@@ -33,51 +47,61 @@ static int	word_count(char const *s, char c)
 	count = 0;
 	while (s[i] != '\0')
 	{
-		if (i > 0 && s[i] == c && s[i - 1] != c)
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			count++;
 		i++;
 	}
-	return (count + 1);
+	return (count);
 }
 
-static void	create_words(char *s_clean, char c, char **res)
+static int	create_words(char const *s, char c, char **res)
 {
 	int		i;
 	int		j;
-	int		st;
 
-	i = 0;
 	j = 0;
-	while (s_clean[i] != '\0')
+	while (*s)
 	{
-		st = i;
-		while (s_clean[i] != c && s_clean[i] != '\0')
+		i = 0;
+		while (s[i] != c && s[i] != '\0')
 		{
-			if (i - st > 0 && (s_clean[i + 1] == c || s_clean[i + 1] == '\0'))
+			if ((s[i + 1] == c || s[i + 1] == '\0'))
 			{
-				res[j] = ft_substr(&s_clean[st], 0, i - st + 1);
+				res[j] = ft_substr(s, 0, i + 1);
+				if (!res[j])
+					return (j);
 				j++;
 			}
 			i++;
 		}
-		i++;
+		if (s[i] != '\0')
+			i++;
+		s += i;
 	}
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		count;
-	char	*s_clean;
 	char	**res;
+	int		test;
 
-	if (!*s || !c)
-		return (empty_fill());
-	s_clean = ft_strtrim(s, &c);
+	if (!*s)
+		return (empty_fill(1, s));
+	if (!c)
+		return (empty_fill(2, s));
 	count = (word_count(s, c));
 	if (count <= 0)
-		return (empty_fill());
+		return (empty_fill(1, s));
 	res = (char **)ft_calloc(count + 1, sizeof(char *));
-	create_words(s_clean, c, res);
-	free (s_clean);
-	return (res);
+	test = create_words(s, c, res);
+	if (test == 0)
+		return (res);
+	else
+	{
+		free_all(res, test);
+		free(res);
+		return (0);
+	}
 }

@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 19:30:03 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 00:10:59 by dlima-se         ###   ########.fr       */
+/*   Created: 2022/09/18 00:54:59 by dlima-se          #+#    #+#             */
+/*   Updated: 2022/09/18 01:16:11 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char	*big, const char *little, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t		i;
+	t_list	*new;
 
-	i = 0;
-	if (little[0] == '\0')
-	{
-		if (big)
-			return ((char *)big);
-		else
-			return (0);
-	}
-	if (n < 0)
-		n *= -1;
-	if (n == 0)
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
 		return (0);
-	while (big[i] != '\0' && i < n)
-	{
-		if (ft_strlen(little) <= n - i)
-			if (ft_memcmp(&big[i], little, ft_strlen(little)) == 0)
-				return ((char *)&big[i]);
-		i++;
-	}
-	return (0);
+	new->content = content;
+	new->next = NULL;
 }

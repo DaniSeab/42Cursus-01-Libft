@@ -6,7 +6,7 @@
 #    By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/05 22:15:32 by dlima-se          #+#    #+#              #
-#    Updated: 2022/09/14 19:05:05 by dlima-se         ###   ########.fr        #
+#    Updated: 2022/09/18 00:54:43 by dlima-se         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,16 @@ SRCS		= ft_isalpha.c \
             ft_putstr_fd.c \
             ft_putendl_fd.c \
             ft_putnbr_fd.c
-BONUS_SRCS	=
+BONUS_SRCS	= ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			
 INC			= -I libft.h
 OBJS		= ${SRCS:.c=.o}
 BONUS_OBJS	= ${BONUS_SRCS:.c=.o}

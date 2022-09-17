@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/08 19:30:03 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 00:10:59 by dlima-se         ###   ########.fr       */
+/*   Created: 2022/09/18 01:00:24 by dlima-se          #+#    #+#             */
+/*   Updated: 2022/09/18 01:02:21 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char	*big, const char *little, size_t n)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t		i;
-
-	i = 0;
-	if (little[0] == '\0')
-	{
-		if (big)
-			return ((char *)big);
-		else
-			return (0);
-	}
-	if (n < 0)
-		n *= -1;
-	if (n == 0)
-		return (0);
-	while (big[i] != '\0' && i < n)
-	{
-		if (ft_strlen(little) <= n - i)
-			if (ft_memcmp(&big[i], little, ft_strlen(little)) == 0)
-				return ((char *)&big[i]);
-		i++;
-	}
-	return (0);
+	new->next = lst;
+	lst = new;
 }
