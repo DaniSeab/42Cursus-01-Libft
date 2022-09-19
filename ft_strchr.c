@@ -6,17 +6,18 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:29:32 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/14 00:42:36 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/20 00:55:22 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *str, int ch)
 {
-	if (!*str || ch < -128 || ch > 127)
-		return ((char *)str);
+	char	c;
+
+	c = (char)ch;
 	while (*str)
 	{
-		if ((int)*str == ch)
+		if ((char)*str == c)
 			return ((char *)str);
 		str++;
 	}
