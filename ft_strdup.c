@@ -6,13 +6,13 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 18:13:40 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/08 20:44:07 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/24 19:04:22 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*dest;
 	int		len;
