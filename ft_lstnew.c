@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dlima-se <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 00:54:59 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 01:16:11 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/24 16:38:11 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (0);
 	new->content = content;
 	new->next = NULL;
+	return (new);
 }

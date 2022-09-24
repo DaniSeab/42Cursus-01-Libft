@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dlima-se <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 01:02:32 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 01:03:48 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:13:59 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_lstsize(t_list *lst)
 	int	count;
 
 	count = 0;
-	while (lst->next != NULL)
+	while (lst)
 	{
-		lst++;
+		lst = lst->next;
 		count++;
 	}
 	return (count);

@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dlima-se <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 01:03:57 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 01:04:50 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:09:04 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
-	while (lst->next != NULL)
-		lst++;
+{
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
 	return (lst);
 }

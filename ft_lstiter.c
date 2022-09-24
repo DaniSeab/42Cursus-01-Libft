@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dlima-se <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 01:12:57 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 01:14:24 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:08:41 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (!lst || !f)
+		return ;
 	while (lst)
 	{
-		lst = f(lst);
-		lst++;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

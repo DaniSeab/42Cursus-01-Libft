@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dlima-se <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 01:14:37 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/18 01:20:22 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:13:22 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-	t_list			*res;
+	t_list			*new_lst;
+	t_list			*tmp;
 
-	i = 0;
-	while (lst->next != NULL)
+	if (!lst)
+		return (0);
+	new_lst = 0;
+	while (lst)
 	{
-		res = ft_lstnew(lst->content);
-		res->next = (lst + 1)->next;
-		f(res);
-		del(lst);
-		lst++;
-		res++;
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&new_lst, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_lst, tmp);
+		lst = lst->next;
 	}
-	return (res);
+	return (new_lst);
 }
