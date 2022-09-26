@@ -6,7 +6,7 @@
 #    By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/05 22:15:32 by dlima-se          #+#    #+#              #
-#    Updated: 2022/09/18 00:54:43 by dlima-se         ###   ########.fr        #
+#    Updated: 2022/09/26 22:02:56 by dlima-se         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,8 +53,7 @@ BONUS_SRCS	= ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c \
-			
+			ft_lstmap.c
 INC			= -I libft.h
 OBJS		= ${SRCS:.c=.o}
 BONUS_OBJS	= ${BONUS_SRCS:.c=.o}
@@ -74,7 +73,7 @@ ${BONUS_OBJS}:
 	${CC} ${CFLAGS} ${@:.o=.c} ${INC}
 	ar -rcs ${NAME} $@
 
-bonus: ${BONUS_OBJS} all
+bonus: ${BONUS_OBJS}
 
 clean:
 	rm -f ${OBJS} ${BONUS_OBJS}

@@ -6,7 +6,7 @@
 /*   By: dlima-se <dlima-se@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:30:27 by dlima-se          #+#    #+#             */
-/*   Updated: 2022/09/20 01:02:02 by dlima-se         ###   ########.fr       */
+/*   Updated: 2022/09/26 19:16:33 by dlima-se         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strrchr(const char *str, int ch);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *dest, size_t len);
 void	*ft_calloc(size_t nitems, size_t size);
-char	*ft_strdup(char *src);
+char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
