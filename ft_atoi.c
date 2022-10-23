@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		//multiply by 10 to open new decimal house then add current string char converted to int
+		//multiply by 10 to open new decimal place then add current string char converted to int
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
