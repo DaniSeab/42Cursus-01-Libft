@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//linked list function. Iterates through a list and modifies nodes content with function f
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
