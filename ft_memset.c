@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//copies string.h function memset - fill memory with a constant byte
 void	*ft_memset(void *dest, int ch, size_t len)
 {
 	size_t	i;
