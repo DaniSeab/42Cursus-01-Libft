@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//takes a string input and translates it to an integer
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -19,8 +20,10 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sig = 1;
 	res = 0;
+	//ignore characters that arent digits
 	while ((str[i] >= '\a' && str[i] <= '\r') || str[i] == ' ')
 		i++;
+	//if negative symbol precedes digits, store -1 in variable "sig"
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
@@ -29,8 +32,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		//multiply by 10 to open new decimal house then add current string char converted to int
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
+	//if "sig" == -1, int becomes negative
 	return (res * sig);
 }
