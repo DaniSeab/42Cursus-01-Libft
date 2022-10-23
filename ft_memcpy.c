@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+//replicates the string.h function memcpy.
+//function copies n bytes from memory area src to memory area dest
 void	*ft_memcpy(void *dest, const void *src, size_t len)
 {
 	char		*d;
@@ -21,5 +23,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t len)
 	s = (const char *)src;
 	while (len--)
 		*d++ = *s++;
+	//**important: memcpy always returns dest
 	return (dest);
 }
