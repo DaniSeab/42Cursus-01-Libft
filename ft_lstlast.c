@@ -12,11 +12,15 @@
 
 #include "libft.h"
 
+//linked list function. Finds and returns last node of list
 t_list	*ft_lstlast(t_list *lst)
 {
+	//if input * is null, return null *
 	if (!lst)
 		return (0);
+	//while theres any value in node's "next" variable, go to next node
 	while (lst->next)
 		lst = lst->next;
+	//return the node with "NULL" in its "next" variable, as it's the last
 	return (lst);
 }
