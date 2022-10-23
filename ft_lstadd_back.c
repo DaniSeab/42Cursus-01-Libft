@@ -12,17 +12,22 @@
 
 #include "libft.h"
 
+//linked list function. Adds new node to end of list
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
+	//if new is null, doesnt point to a node, don't add it
 	if (!new)
 		return ;
+	//if theres no items in the list, just point to new node
 	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
+	//otherwise, hold in tmp the pointer to the last node
 	tmp = ft_lstlast(*lst);
+	//and set its next variable to the adress of new
 	tmp->next = new;
 }
