@@ -12,10 +12,14 @@
 
 #include "libft.h"
 
+//linked list function. Deletes and frees 1 node
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	//if theres no input node, do nothing
 	if (!lst)
 		return ;
+	//use function del to delete content of node
 	del(lst->content);
+	//free mallocated node memory
 	free(lst);
 }
