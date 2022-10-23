@@ -12,13 +12,16 @@
 
 #include "libft.h"
 
+//remake of calloc function. Mallocs nitems of size in heap memory and sets slots to 0
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*p;
 
+	//if call to function doesnt want to allocate anything OR wants to allocate more than mallocs limit per the manual
 	if (nitems == 0 || size == 0 || nitems >= 2147483647 / size)
 		return (NULL);
 	p = malloc(size * nitems);
+	//if malloc fails
 	if (!p)
 		return (NULL);
 	ft_bzero(p, nitems * size);
