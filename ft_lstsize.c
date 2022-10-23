@@ -12,11 +12,13 @@
 
 #include "libft.h"
 
+//linked list function. Returns how many nodes the list has
 int	ft_lstsize(t_list *lst)
 {
 	int	count;
 
 	count = 0;
+	//while lst * isn't NULL, go no next node and add 1 to the node count
 	while (lst)
 	{
 		lst = lst->next;
