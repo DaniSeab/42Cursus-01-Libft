@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks if input character correlates to ascii character
 int	ft_isascii(int ch)
 {
 	if (ch < 0 || ch > 127)
