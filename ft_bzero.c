@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//empties len ammount of memory slots pointed by dest
 void	ft_bzero(void *dest, size_t len)
 {
 	size_t	i;
