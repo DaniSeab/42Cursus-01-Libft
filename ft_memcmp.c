@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+//replicates the string.h function memcmp
+//compares the first n bytes of memory pointed toby str1 and str2
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	size_t	i;
