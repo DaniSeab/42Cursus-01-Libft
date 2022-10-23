@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//replicates the string.h function memchr
+//scans n bytes of memory pointed by str looking for ch. Returns 1st instance of ch
 #include "libft.h"
 
 void	*ft_memchr(const void *str, int ch, size_t n)
