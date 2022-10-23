@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//Put a byte on fd's stream
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
