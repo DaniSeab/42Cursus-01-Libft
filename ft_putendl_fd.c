@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//put a string followed by a new line on fd's stream
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
