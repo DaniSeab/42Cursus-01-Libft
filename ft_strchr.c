@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//copies string.h function strchr - locate 1st instance of character in string
 char	*ft_strchr(const char *str, int ch)
 {
 	char	c;
