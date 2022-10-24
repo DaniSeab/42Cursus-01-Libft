@@ -12,10 +12,11 @@
 
 #include "libft.h"
 
+//makes a copy of string s with values altered by function f
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			*res;
+	char		*res;
 
 	i = 0;
 	res = ft_calloc(ft_strlen(s) + 1, sizeof(char));
