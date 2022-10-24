@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//put a string on fd's stream
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
