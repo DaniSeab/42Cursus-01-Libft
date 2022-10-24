@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//if input is upper care, returns it in lowercase
 int	ft_tolower(int ch)
 {
 	if (ch >= 'A' && ch <= 'Z')
