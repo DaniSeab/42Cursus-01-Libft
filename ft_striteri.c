@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//iterates trhough string and changes values with function f
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
