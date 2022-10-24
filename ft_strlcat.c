@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+//copies string.h function strlcat. concatenate two strings
+/* appends the NUL-terminated string src to the end of dst. 
+It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+*/
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
@@ -29,5 +33,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		i++;
 	}
 	dest[dest_size + i] = '\0';
+	//return the total length of the string it tried to create
 	return (dest_size + src_size);
 }
