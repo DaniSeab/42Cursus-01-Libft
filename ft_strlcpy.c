@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+////copies string.h function strlcpy. Copies string into dest array.
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
@@ -32,5 +33,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		}
 		dest[i] = '\0';
 	}
+	//return the total length of the string it tried to create
 	return (count);
 }
