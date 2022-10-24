@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-//defines the size of a buffer that holds an int / unsigned of up to 64 bits.
+//defines the size of a buffer that holds an int / unsigned of up to 64 bits. 
 # define INT_DIGITS_BUFFER_SIZE 21
 
 typedef struct s_list
