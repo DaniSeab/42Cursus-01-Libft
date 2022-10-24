@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-//copies string.h function strchr - locate last instance of character in string
+//copies string.h function strchr - locate last instance of character in string.
 char	*ft_strrchr(const char *str, int ch)
 {
 	const char	*start;
