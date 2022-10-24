@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//if input is lower case, returns it in uppercase
 int	ft_toupper(int ch)
 {
 	if (ch >= 'a' && ch <= 'z')
