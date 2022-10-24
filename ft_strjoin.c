@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//joins 2 strings
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
