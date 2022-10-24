@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//compares at most the first n bytes of s1 and s2. 
 int	ft_strncmp(const char *s1, const char *s2, size_t len)
 {
 	if (len > ft_strlen(s1))
