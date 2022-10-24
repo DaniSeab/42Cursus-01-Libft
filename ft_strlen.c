@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//copies string.h function strlen. Returns size of string, not counting \0
 size_t	ft_strlen(const char *str)
 {
 	size_t	len;
