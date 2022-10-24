@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//trims chars from set from both ends of string s1
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		end;
