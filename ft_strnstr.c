@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//copy of function strnstr. Locates a substring in a string where not more than	len characters are searched
 char	*ft_strnstr(const char	*big, const char *little, size_t n)
 {
 	size_t		i;
