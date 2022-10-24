@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//put an int on fd's stream. Needs to translates integer to string.
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
